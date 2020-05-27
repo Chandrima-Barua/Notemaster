@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My fisrt Vue app!</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+  <div  id=app>
+    <data-counter class="v-btn"></data-counter>
+    <data-counter class="v-btn"></data-counter>
+    <data-counter class="v-btn"></data-counter>
+</div >
+    <script>
+     Vue.component('data-counter', {
+       data: function(){
+         return {
+           count:0
+         }
+       },
+       template: '<button v-on:click="increments">You clicked me {{ count }} times.</button>',
+       methods:{
+         increments(){
+           this.count++
+         }
+       }
+})
+
+
+      var app = new Vue({
+        el:"#app",
+        components: {
+          data-counter
+       }
+    })
+      </script>
+
+</body>
+</html>
